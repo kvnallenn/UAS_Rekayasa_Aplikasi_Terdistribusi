@@ -1,0 +1,132 @@
+FORMAT: 1A
+HOST: localhost/
+
+# UAS
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Data Mahasiswa [/rest-api/json]
+
+### Semua List mahsiswa [GET/rest-api/json/get_api.php]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "Data mahasiswa": [
+                    {
+            "id_mahasiswa": "id mahasiswa",
+            "nama_mahasiswa": "nama mahasiswa",
+            "umur_mahasiswa": "umur mahasiswa",
+            "nim_mahasiswa": "nim mahasiswa",
+            "alamat_mahasiswa": "alamat mahasiswa"
+        },
+        {
+            "id_mahasiswa": "id mahasiswa",
+            "nama_mahasiswa": "nama mahasiswa",
+            "umur_mahasiswa": "umur mahasiswa",
+            "nim_mahasiswa": "nim mahasiswa",
+            "alamat_mahasiswa": "alamat mahasiswa"
+        },
+                ]
+            }
+        ]
+
+### Membuat data mahasiswa baru [POST]
+
+untuk menambah mahasiswa baru
+
++ Request (application/json)
+
+        {
+        "Data mahasiswa": [
+        {
+            "id_mahasiswa": "id mahasiswa",
+            "nama_mahasiswa": "nama mahasiswa",
+            "umur_mahasiswa": "umur mahasiswa",
+            "nim_mahasiswa": "nim mahasiswa",
+            "alamat_mahasiswa": "alamat mahasiswa"
+        }
+        ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /json/post
+
+    + Body
+
+            {
+            "Data Mahasiwa": [
+            {
+            "id_mahasiswa": "id mahasiswa baru",
+            "nama_mahasiswa": "nama mahasiswa baru",
+            "umur_mahasiswa": "umur mahasiswa baru",
+            "nim_mahasiswa": "nim mahasiswa baru",
+            "alamat_mahasiswa": "alamat mahasiswa baru"
+            },
+            ]
+            }
+            
+### Mengedit data mahasiswa [PUT]
+
+untuk meng-edit data mahasiswa
+
++ Request (application/json)
+
+        {
+        "Data mahasiswa": [
+        {
+            "id_mahasiswa": "id mahasiswa",
+        }
+        ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /json/put
+
+    + Body
+
+            {
+            "Data Mahasiswa": [
+            {
+            "id_mahasiswa": "",
+            "nama_mahasiswa": "",
+            "umur_mahasiswa": "",
+            "nim_mahasiswa": "",
+            "alamat_mahasiswa": ""
+            },
+            ]
+            }
+            
+### Menghapus data mahasiswa [DELETE/json/delete]
+
+untuk menghapus data mahasiswa 
+
++ Request (application/json)
+
+        {
+        "Data mahasiswa": [
+        {
+            "id_mahasiswa": "id mahasiswa",
+        }
+        ]
+        }
+        
+        + Response 201 (application/json)
+
+    + Headers
+
+            Location: /json/delete
+
+    + Body
+
+            {
+            " berhasil terhapus "
+            ]
+            }
